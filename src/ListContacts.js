@@ -30,7 +30,6 @@ class ListContacts extends Component {
 
     return (
       <div className='list-contacts'>
-        {JSON.stringify(this.state)}
         <div className='list-contacts-top'>
           <input
             className='search-contacts'
@@ -39,6 +38,11 @@ class ListContacts extends Component {
             value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
+          <a href='#create'
+            onClick={this.props.onNavigate}
+            className='add-contact'>
+            Add Contact
+            </a>
         </div>
         <ol className='contact-list'>
           {showingContacts.map((contact) => (
