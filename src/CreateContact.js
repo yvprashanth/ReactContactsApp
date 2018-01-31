@@ -1,16 +1,30 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import ImageInput from './ImageInput'
 
-class CreateContact extends Component {    
-    render(){
-        var divStyle = {
-            'text-align':'center', 
-            'font-weight': 'bolder',
-            'font-size':'3em'
-        }
-        return(
-            <div style={divStyle}>Create Contact!</div>
-        )
+class CreateContact extends Component {
+  render () {
+    var divStyle = {
+      'text-align': 'center',
+      'font-weight': 'bolder'
     }
+    return (
+      <div style={divStyle}>
+        <Link className='close-create-contact' to='/'> Close
+        </Link>
+        <form className='create-contact-form'>
+          <ImageInput className='create-contact-avatar-input' name='avatarURL' maxHeight={64} />
+          <div className='create-contact-details'>
+            <input type='text' name='name' placeholder='Name' />
+            <input type='text' name='email' placeholder='Email' />
+            <button>
+              Add Contact
+            </button>
+          </div>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default CreateContact
