@@ -54,7 +54,7 @@ class ListContacts extends Component {
                 <p>{contact.name}</p>
                 <p>{contact.email}</p>
               </div>
-              <button onClick={() => this.props.onDeleteContact(contact)} className='contact-remove'>
+              <button onClick={() => {if (window.confirm('Are you sure you want to delete ' + contact.name + " ?")) this.props.onDeleteContact(contact)}} className='contact-remove'>
                 Remove
               </button>
             </li>
